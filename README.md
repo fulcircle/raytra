@@ -4,7 +4,7 @@ raytra
 Simple C++ raytracer
 
 ![Picture of demo scene 1](https://raw.github.com/fulcircle/raytra/master/renders/demo_scene.png)
-![Picture of spheres](https://raw.github.com/fulcircle/raytra/master/renders/spheres.png)
+![Picture of spheres](https://raw.github.com/fulcircle/raytra/master/renders/spheretest.png)
 ![Picture of lexus](https://raw.github.com/fulcircle/raytra/master/renders/lexus.png)
 
 
