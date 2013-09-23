@@ -3,29 +3,34 @@ raytra
 
 Simple C++ raytracer
 
-How it works
-------------
-In order to render a scene, raytra reads in a text file, an example is included.
 
----------------------------------------
+Requirements
+-------------
+* linux
+* gcc
+* *OpenEXR library and headers
+
+
+How to compile
+------------
 Including is a makefile.  Just type "make" in the directory to compile.  Make sure you have the OpenEXR library and headers installed and change the library path in the Makefile if it's not the default (/usr/include/OpenEXR).
 
+Scene files
+------------
 The scenefiles directory contains different scenes to render.  They contain all the objects, lighting and position information to pass to the renderer.  The demo_scene.txt shows all the features I implemented: glossy reflection, area lights/soft shadows, anti-aliasing and refraction.  The lexus.txt will demonstrate the speed of the BVH structure, since it contains about 40K triangles.
----------------------------------------
 
 
----------------------------------------
-The following a description of the cpp files included:
-
+File descriptions
+-----------------
 raytra.cpp: main application control, just a few lines to call the parser, and then the renderer.
 objects.cpp: Contains all the object classes which includes lights, surfaces, boundingboxes and the bvh implementation (as BvhNode).
 readscene.cpp: reads the scene files.
 scene.cpp: the main renderer class.
 support.cpp: support code which includes points, vectors, rays and the Utility class which implements some useful functions.
 camera.cpp: camera class.
----------------------------------------
 
 
+Custom options
 ---------------------------------------
 The following is an explanation of the custom options available to be used in a scene file.  The demo_scene.txt file uses all of these options as an example.
 The first is the "o" option.  It requires four parameters.  If no "o" is specified, the built-in default values are used.
@@ -52,6 +57,5 @@ r [refraction_index] [kr] [kg] [kb]
 
 refraction_index: represents how large the angle of refraction is as the ray passes through the object. 
 kr, kg, kb: The red, green and blue values for the refractive constant (we assume the constants have the ln operation folded into them).
----------------------------------------
  
 
